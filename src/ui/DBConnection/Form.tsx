@@ -114,36 +114,38 @@ const DBConnectionForm: React.FC = () => {
                       paddingTop: "4rem",
                     }}
                   >
-                    <Paper elevation={8} style={{ width: "50%" }}>
-                      <Typography variant="h4" align="center">
-                        Recent connections
-                      </Typography>
-                      <div
-                        style={{ display: "flex", justifyContent: "center" }}
-                      >
-                        <List dense style={{ width: "100%" }}>
-                          {savedConnections.map((connection: any) => (
-                            <ListItem
-                              button
-                              style={{ textAlign: "center" }}
-                              onClick={() => {
-                                setValues({
-                                  database: connection.databaseName,
-                                  host: connection.host,
-                                  port: connection.port,
-                                  user: connection.user,
-                                  password: "",
-                                });
-                              }}
-                            >
-                              <ListItemText
-                                style={{ wordBreak: "break-all" }}
-                              >{`${connection.user}@${connection.host}:${connection.port}/${connection.databaseName}`}</ListItemText>
-                            </ListItem>
-                          ))}
-                        </List>
-                      </div>
-                    </Paper>
+                    {savedConnections.length > 0 && (
+                      <Paper elevation={8} style={{ width: "50%" }}>
+                        <Typography variant="h4" align="center">
+                          Recent connections
+                        </Typography>
+                        <div
+                          style={{ display: "flex", justifyContent: "center" }}
+                        >
+                          <List dense style={{ width: "100%" }}>
+                            {savedConnections.map((connection: any) => (
+                              <ListItem
+                                button
+                                style={{ textAlign: "center" }}
+                                onClick={() => {
+                                  setValues({
+                                    database: connection.databaseName,
+                                    host: connection.host,
+                                    port: connection.port,
+                                    user: connection.user,
+                                    password: "",
+                                  });
+                                }}
+                              >
+                                <ListItemText
+                                  style={{ wordBreak: "break-all" }}
+                                >{`${connection.user}@${connection.host}:${connection.port}/${connection.databaseName}`}</ListItemText>
+                              </ListItem>
+                            ))}
+                          </List>
+                        </div>
+                      </Paper>
+                    )}
                   </div>
                 </Form>
               )}
