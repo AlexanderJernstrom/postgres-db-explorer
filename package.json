@@ -38,6 +38,12 @@
           "config": {}
         },
         {
+          "name": "@electron-forge/maker-dmg",
+          "config": {
+            "format": "ULFO"
+          }
+        },
+        {
           "name": "@electron-forge/maker-rpm",
           "config": {}
         }
@@ -86,6 +92,7 @@
   },
   "dependencies": {
     "@codemirror/lang-sql": "^0.19.4",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.61",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@types/codemirror": "^5.60.5",
